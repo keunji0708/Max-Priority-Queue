@@ -31,5 +31,16 @@ class Node {
 }
 
 public class MaxPQ {
-
+	public static void buildMaxHeap(List<Node> list) {
+		if (list == null) {
+			return;
+		}
+		for (int i = list.size() / 2; i >= 0; i--) {
+			maxHeapify(list, i);
+		}
+	}
+	
+	public static void maxHeapify(List<Node> list, int i) {
+		
+	}
 }
