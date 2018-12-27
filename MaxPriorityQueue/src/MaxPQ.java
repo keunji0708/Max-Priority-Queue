@@ -41,6 +41,22 @@ public class MaxPQ {
 	}
 	
 	public static void maxHeapify(List<Node> list, int i) {
+		int left_c = (2 * i);
+		int right_c = (2 * i) + 1;
+		int large = 0;
 		
+		if (left_c < list.size() && list.get(left_c).getkey() > list.get(i).getkey()) {
+			large = left_c;
+		}
+		else {
+			large = i;
+		}
+		if (right_c < list.size() && list.get(right_c).getkey() > list.get(large).getkey()) {
+			large = right_c;
+		}
+		if (large != i) {
+			Collections.swap(list, i, large);
+			maxHeapify(list, large);
+		}
 	}
 }
