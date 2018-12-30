@@ -83,12 +83,12 @@ public class MaxPQ {
 	public static void main(String args[]) throws IOException{
 		List list = new ArrayList<>();
 		Node node;
-		int num = 0;
-		String name = "";
 		
 		BufferedReader br = new BufferedReader(new FileReader("data03.txt"));
 		String line = br.readLine();
 		int temp = 0;
+		int num = 0;
+		String name = "";
 		
 		while (line != null) {
 			StringTokenizer st = new StringTokenizer(line, ", ");
@@ -177,7 +177,7 @@ public class MaxPQ {
 				break;
 			}			
 			else {
-				System.out.println("---------- 다시 입력하세요 ----------");
+				System.out.println("--------- 다시 입력하세요 ---------");
 			}
 			print(list);
 		}
