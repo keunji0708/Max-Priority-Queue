@@ -79,6 +79,36 @@ public class MaxPQ {
 		buildMaxHeap(list);
 		System.out.println("제거한 작업 : "+temp.getkey() + temp.getvalue());		
 	}
+	
+	public static void main(String args[]) throws IOException{
+		List list = new ArrayList<>();
+		Node node;
+		int num = 0;
+		String name = "";
+		
+		BufferedReader br = new BufferedReader(new FileReader("data03.txt"));
+		String line = br.readLine();
+		int temp = 0;
+		
+		while (line != null) {
+			StringTokenizer st = new StringTokenizer(line, ", ");
+			int size = st.countTokens();
+			while (st.hasMoreTokens()) {
+				node = new Node();
+				num = Integer.parseInt(st.nextToken());
+				node.setkey(num);
+				name = st.nextToken("\n");
+				node.setvalue(name);
+				list.add(temp, node);
+				temp++;
+			}
+			line = br.readLine();
+		}
+		
+		buildMaxHeap(list);
+		//print(list);
+	}
+	
 }
 
 class Node {
