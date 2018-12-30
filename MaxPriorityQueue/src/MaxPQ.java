@@ -106,9 +106,18 @@ public class MaxPQ {
 		}
 		
 		buildMaxHeap(list);
-		//print(list);
+		print(list);
 	}
 	
+	public static void print(List list) {
+		System.out.println("\n**** 현재 우선 순위 큐에 저장되어 있는 작업 대기 목록은 다음과 같습니다 ****\n");
+		Node node;
+		for(int i = 0; i <= list.size() - 1; i++) {
+			node = (Node) list.get(i);
+			System.out.println((i)+"번 -> " + node.getkey() + node.getvalue());
+		}
+		
+	}
 }
 
 class Node {
