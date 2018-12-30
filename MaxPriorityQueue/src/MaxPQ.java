@@ -74,4 +74,22 @@ public class MaxPQ {
 			return max_node;
 		}
 	}
+	
+	public static void extract_max(List<Node> list) {
+		if (list.size() <= 0) { 
+			System.out.println("Empty");
+			return;
+		} 
+		else if (list.size() == 1){ 
+			Node ex_node = list.get(0); 
+			list.remove(0);
+			System.out.println(ex_node.getkey() + ex_node.getvalue());
+			return;
+		}
+		Node ex_node = list.get(0);
+		list.set(0, list.get(list.size() - 1)); 
+		list.remove(list.size() - 1);
+		buildMaxHeap(list);
+		System.out.println(ex_node.getkey() + ex_node.getvalue());
+	}
 }
