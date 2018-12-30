@@ -125,20 +125,16 @@ public class MaxPQ {
 				subject = ", " + subject;
 				Node newNode = new Node(key, subject);
 				insert(list, newNode);
-				print(list);
 			}
 			else if (input.equals("2")) {
 				System.out.println("<<<<<  최대값    >>>>>");
 				Node max_node = max(list); 
 				System.out.println("우선순위가 최대인 원소 : "+max_node.getkey() + max_node.getvalue());
-				print(list);
 			}
 			else if (input.equals("3")) {
 				System.out.println("<<<<<  최대 우선순위 작업 처리    >>>>>");
 				System.out.print("처리된 최대 우선순위 작업 : ");
 				extract_max(list);
-				print(list);
-				continue;
 			}
 			else if (input.equals("4")) {
 				Node x = new Node();
@@ -168,17 +164,13 @@ public class MaxPQ {
 					else break; 
 				}
 				increase_key(list, x, key); 
-				print(list); 
-			}
-			
+			}			
 			else if (input.equals("5")) {
 				System.out.println("<<<<<  작업 제거    >>>>>");
 				System.out.print("제거할 작업의 우선 순위를 입력하세요 : ");
 				int count = scan.nextInt(); 
 				Node x = (Node) list.get(count);
 				delete(list, x, count); 
-				print(list);
-				continue;
 			}
 			else if (input.equals("6")) {
 				System.out.println("<<<<<  프로그램을 종료합니다    >>>>>");
@@ -186,8 +178,8 @@ public class MaxPQ {
 			}			
 			else {
 				System.out.println("---------- 다시 입력하세요 ----------");
-				continue;
 			}
+			print(list);
 		}
 	}
 	
