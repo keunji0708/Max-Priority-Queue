@@ -1,35 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-class Node {
-	private int key;
-	private String value;
-
-	public Node() {
-	}
-
-	public Node(int k, String v) {
-		key = k;
-		value = v;
-	}
-
-	public int getkey() {
-		return key;
-	}
-
-	public String getvalue() {
-		return value;
-	}
-
-	public void setkey(int k) {
-		key = k;
-	}
-
-	public void setvalue(String v) {
-		value = v;
-	}
-}
-
 public class MaxPQ {
 	public static void buildMaxHeap(List<Node> list) {
 		if (list == null) {
@@ -91,5 +62,50 @@ public class MaxPQ {
 		list.remove(list.size() - 1);
 		buildMaxHeap(list);
 		System.out.println(ex_node.getkey() + ex_node.getvalue());
+	}
+	
+	public static void increase_key(List<Node> list, Node x, int k) {
+		int temp = x.getkey();
+		x.setkey(k);
+		buildMaxHeap(list);
+		System.out.println("키값 수정 전 : "+ temp + x.getvalue() 
+		+ "//  키값 수정 후: " + x.getkey() + x.getvalue());
+	}
+	
+	public static void delete(List<Node> list, Node x, int count) {
+		Node temp = x;
+		list.set(count,list.get(list.size()-1));
+		list.remove(list.size()-1);
+		buildMaxHeap(list);
+		System.out.println("제거한 작업 : "+temp.getkey() + temp.getvalue());		
+	}
+}
+
+class Node {
+	private int key;
+	private String value;
+
+	public Node() {
+	}
+
+	public Node(int k, String v) {
+		key = k;
+		value = v;
+	}
+
+	public int getkey() {
+		return key;
+	}
+
+	public String getvalue() {
+		return value;
+	}
+
+	public void setkey(int k) {
+		key = k;
+	}
+
+	public void setvalue(String v) {
+		value = v;
 	}
 }
