@@ -59,4 +59,19 @@ public class MaxPQ {
 			maxHeapify(list, large);
 		}
 	}
+	
+	public static void insert(List<Node> list, Node n) {
+		list.add(n);
+		buildMaxHeap(list);
+	}
+	
+	public static Node max(List<Node> list) {
+		if (list.size() <= 0) { 
+			System.out.println("Empty");
+			return null;
+		} else {
+			Node max_node = list.get(0); 
+			return max_node;
+		}
+	}
 }
